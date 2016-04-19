@@ -22,7 +22,7 @@
     UIButton *firstButton = [UIButton  buttonWithType:UIButtonTypeRoundedRect];
     firstButton.frame = CGRectMake(100, 100, 100, 44);
    // firstButton.backgroundColor = [UIColor redColor];
-    [firstButton setTitle:@"Make 50 !" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Make 50%" forState:UIControlStateNormal];
     [self.view addSubview:firstButton];
     [firstButton addTarget:self
                  action:@selector(buttonPressed:)
@@ -32,7 +32,7 @@
     UIButton *secondButton = [UIButton  buttonWithType:UIButtonTypeRoundedRect];
     secondButton.frame = CGRectMake(100,500, 100, 44);
     // firstButton.backgroundColor = [UIColor redColor];
-    [secondButton setTitle:@"Make 100 !" forState:UIControlStateNormal];
+    [secondButton setTitle:@"Make 100%" forState:UIControlStateNormal];
     [self.view addSubview:secondButton];
     [secondButton addTarget:self
                     action:@selector(buttonPressed:)
@@ -56,8 +56,15 @@
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender : %@" , sender);
-    self.view.alpha = ((double)arc4random() / 0x100000000);
-    [sender removeFromSuperview];
+    
+    if([sender.titleLabel.text isEqualToString:@"Make 50%"]){
+        self.view.alpha= .5;
+        
+    }else{
+        self.view.alpha=1;
+    }
+    //self.view.alpha = ((double)arc4random() / 0x100000000);
+  //  [sender removeFromSuperview];//remove current view
 }
 
 @end
