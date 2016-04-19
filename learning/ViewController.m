@@ -22,12 +22,21 @@
     UIButton *firstButton = [UIButton  buttonWithType:UIButtonTypeRoundedRect];
     firstButton.frame = CGRectMake(100, 100, 100, 44);
    // firstButton.backgroundColor = [UIColor redColor];
-    [firstButton setTitle:@"Click me !" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Make 50 !" forState:UIControlStateNormal];
     [self.view addSubview:firstButton];
     [firstButton addTarget:self
                  action:@selector(buttonPressed:)
                  forControlEvents:UIControlEventTouchUpInside];
     
+    //add second button
+    UIButton *secondButton = [UIButton  buttonWithType:UIButtonTypeRoundedRect];
+    secondButton.frame = CGRectMake(100,500, 100, 44);
+    // firstButton.backgroundColor = [UIColor redColor];
+    [secondButton setTitle:@"Make 100 !" forState:UIControlStateNormal];
+    [self.view addSubview:secondButton];
+    [secondButton addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
     
     //set a lable
     UILabel *firstLabel = [[UILabel alloc]initWithFrame:CGRectMake(50,30,200,44)];
